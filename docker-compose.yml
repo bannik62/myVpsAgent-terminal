@@ -1,0 +1,15 @@
+services:
+  shell-mcp:
+    image: vps-mcp-shell
+    build: .
+    container_name: mcp-shell
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home:/home:ro
+      - /var/log:/var/log:ro
+      - /etc:/etc:ro
+    ports:
+      - "127.0.0.1:${MCP_PORT}:8000"
+    environment:
+      - MCP_TOKEN=${MCP_TOKEN}

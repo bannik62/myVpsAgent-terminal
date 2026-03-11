@@ -1,0 +1,23 @@
+# Commandes autorisées pour le shell MCP
+# Une commande par ligne (préfixe suffit, ex: "docker" autorise tous les sous-commandes docker)
+
+# Docker
+docker
+
+# Système
+ls
+cat
+tail
+df
+du
+free
+uptime
+ps
+systemctl status
+
+# Logs
+journalctl
+
+# Réseau
+curl
+ping
