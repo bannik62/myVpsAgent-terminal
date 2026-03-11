@@ -1,0 +1,14 @@
+{
+  "name": "my-vps-agent-terminal",
+  "version": "1.0.0",
+  "description": "Self-hosted MCP shell server for VPS",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "zod": "^3.23.8"
+  }
+}
