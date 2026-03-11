@@ -5,18 +5,12 @@
     SSLCertificateFile /etc/ssl/mcp/cert.pem
     SSLCertificateKeyFile /etc/ssl/mcp/key.pem
 
-    # MCP Shell endpoint
+    # MCP Shell endpoint — auth gérée par le serveur Node.js
     <Location /mcp/shell>
         ProxyPass http://127.0.0.1:{{MCP_PORT}}/
         ProxyPassReverse http://127.0.0.1:{{MCP_PORT}}/
-
-        SetEnvIf Authorization "Bearer {{MCP_TOKEN}}" AUTHORIZED=1
-        <RequireAll>
-            Require env AUTHORIZED
-        </RequireAll>
-
-        RequestHeader set X-Forwarded-Proto "https"
         ProxyPreserveHost On
+        RequestHeader set X-Forwarded-Proto "https"
     </Location>
 
 </VirtualHost>

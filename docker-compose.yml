@@ -9,7 +9,9 @@ services:
       - /home:/home:ro
       - /var/log:/var/log:ro
       - /etc:/etc:ro
+      - ./allowed-commands.txt:/app/allowed-commands.txt:ro
     ports:
       - "127.0.0.1:${MCP_PORT}:8000"
     environment:
       - MCP_TOKEN=${MCP_TOKEN}
+      - MCP_TIMEOUT=${MCP_TIMEOUT:-30000}
