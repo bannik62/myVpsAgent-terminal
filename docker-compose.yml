@@ -5,7 +5,6 @@ services:
     container_name: mcp-shell
     restart: unless-stopped
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - /home:/home:ro
       - /var/log:/var/log:ro
       - /etc:/etc:ro

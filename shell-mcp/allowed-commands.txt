@@ -1,19 +1,24 @@
 # Commandes autorisées pour le shell MCP
-# Une commande par ligne (préfixe suffit, ex: "docker" autorise tous les sous-commandes docker)
+# Une commande par ligne — le préfixe suffit (ex: "ls" autorise "ls -la /etc")
+# Laisser ce fichier vide ou le supprimer = toutes les commandes autorisées (non recommandé en prod)
 
-# Docker
-docker
-
-# Système
+# Fichiers et répertoires
 ls
 cat
 tail
-df
+head
+grep
+find
 du
+df
+
+# Système
 free
 uptime
 ps
-systemctl status
+uname
+hostname
+env
 
 # Logs
 journalctl
@@ -21,3 +26,5 @@ journalctl
 # Réseau
 curl
 ping
+ss
+netstat
